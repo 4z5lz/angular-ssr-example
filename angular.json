@@ -168,5 +168,8 @@
       }
     }
   },
-  "defaultProject": "ssr-demo"
+  "defaultProject": "ssr-demo",
+  "cli": {
+    "analytics": "c13ece4e-a1ff-402d-ba9a-da8a42311218"
+  }
 }
