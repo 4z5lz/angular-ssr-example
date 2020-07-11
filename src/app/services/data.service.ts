@@ -5,10 +5,12 @@ import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { User } from '../models/user';
+import { Post } from '../models/post';
 
 @Injectable({ providedIn: 'root' })
-export class UserService {
+export class DataService {
   private usersEndpointUrl = 'https://jsonplaceholder.typicode.com/users'; // URL to web api
+  private postsEndpointUrl = 'https://jsonplaceholder.typicode.com/posts'; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -16,11 +18,18 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  /** GET heroes from the server */
+  /** GET top 10 users list */
   getUsers(): Observable<User[]> {
     return this.http
       .get<User[]>(this.usersEndpointUrl)
       .pipe(catchError(this.handleError<User[]>('getUsers', [])));
+  }
+
+  /** GET top 100 posts list */
+  getPosts(): Observable<Post[]> {
+    return this.http
+      .get<Post[]>(this.postsEndpointUrl)
+      .pipe(catchError(this.handleError<Post[]>('getPosts', [])));
   }
 
   /**
