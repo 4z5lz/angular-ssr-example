@@ -5,9 +5,9 @@ import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { User } from '../models/user';
 import { Post } from '../models/post';
 import { DataService } from '../services/data.service';
+import { EnvironmentService } from '../services/env.service';
 
 const STATE_KEY_USERS = makeStateKey('users-data');
-const STATE_KEY_POSTS = makeStateKey('post-data');
 
 @Component({
   selector: 'app-root',
@@ -22,7 +22,8 @@ export class AppComponent {
     @Inject(PLATFORM_ID) private platformId: object,
     @Inject(APP_ID) private appId: string,
     private state: TransferState,
-    private dataService: DataService
+    private dataService: DataService,
+    private envSerivce: EnvironmentService
   ) {}
 
   ngOnInit(): void {
@@ -41,19 +42,11 @@ export class AppComponent {
         this.state.set(STATE_KEY_USERS, <any>data);
       });
     }
-    
-    // Let's suppose that we're in the Client side 
-    // and TransferState contains the post data  
-    this.posts = this.state.get(STATE_KEY_POSTS, <any>[]);
-    
-    if (!this.posts.length) {
-      // Post data not fount in the TransferState
-      // So, we're in the Server Side now!
-      this.dataService.getPosts().subscribe((data) => {
-        this.posts = data;
         
-        // Place users data to TransferState
-        this.state.set(STATE_KEY_POSTS, <any>data);
+    if (this.envSerivce.isBrowser()) {
+      // Get posts list in the Client side only 
+      this.dataService.getPosts().subscribe((data) => {
+        this.posts = data;        
       });
     }
   }
