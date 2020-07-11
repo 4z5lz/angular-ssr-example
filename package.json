@@ -14,8 +14,9 @@
     "build:ssr": "ng build --prod && ng run ssr-demo:server:production",
     "serve:ssr": "node dist/server/main.js",
     "prerender": "ng run ssr-demo:prerender",
-    "demo-ssr": "npm run build:ssr && npm run serve:ssr",
-    "demo-csr": "http-server -c-1 ./dist/browser"
+    
+    "demo-csr": "http-server -c-1 ./dist/browser",
+    "demo-ssr": "npm run build:ssr && npm run serve:ssr"
   },
   "keywords": [],
   "author": "",
