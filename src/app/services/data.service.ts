@@ -4,13 +4,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { User } from '../models/user';
-import { Post } from '../models/post';
+import { Show } from '../models/show';
 
 @Injectable({ providedIn: 'root' })
-export class DataService {
-  private usersEndpointUrl = 'https://jsonplaceholder.typicode.com/users'; // URL to web api
-  private postsEndpointUrl = 'https://jsonplaceholder.typicode.com/posts'; // URL to web api
+export class MoviesService {
+  private showsSearchEndpointUrl = 'http://api.tvmaze.com/search/shows?q='; // URL to TV-Maze search web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -18,18 +16,10 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  /** GET top 10 users list */
-  getUsers(): Observable<User[]> {
+  getShows(query: string): Observable<Show[]> {
     return this.http
-      .get<User[]>(this.usersEndpointUrl)
-      .pipe(catchError(this.handleError<User[]>('getUsers', [])));
-  }
-
-  /** GET top 100 posts list */
-  getPosts(): Observable<Post[]> {
-    return this.http
-      .get<Post[]>(this.postsEndpointUrl)
-      .pipe(catchError(this.handleError<Post[]>('getPosts', [])));
+      .get<Show[]>(this.showsSearchEndpointUrl + query)
+      .pipe(catchError(this.handleError<Show[]>('getShows, query:' + query, [])));
   }
 
   /**

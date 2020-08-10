@@ -1,0 +1,10 @@
+<h2 class="promo_title">{{title}}</h2>
+
+<section class="block promo">
+  <section *ngFor="let item of promo">
+    <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
+    <p>
+        <strong>{{ item.show.name }}</strong>
+    </p>    
+  </section>
+</section>

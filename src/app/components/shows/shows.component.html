@@ -1,0 +1,16 @@
+<section class="block">
+  <section *ngFor="let item of shows">
+    <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
+    <h2>{{ item.show.name }}</h2>
+    <div>{{ item.show.summary | stripHtml | truncate: [100, "..."] }}</div>
+    <aside>
+      <ul>
+        <li>Price: ${{ item.show.weight }}</li>
+        <li>
+          Rating: <strong>{{ item.show.rating.average }}</strong>
+        </li>
+      </ul>
+      <button>More details</button>
+    </aside>
+  </section>
+</section>

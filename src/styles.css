@@ -1,65 +1,87 @@
-/* Global Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+/* Flex-related code */
+.block {
+  display: flex;
+  flex-wrap: wrap;
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+
+.block > section {
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  text-align: center;
 }
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  margin-top: auto;
+}
+
+/* Basic styling for UI */
+
 body {
-  margin: 2em;
+  background: hsla(195,100%,90%,1);
+  font: 16px "Titillium Web", sans-serif;
+  margin: 0;
 }
-body, input[text], button {
-  color: #333;
-  font-family: Cambria, Georgia;
+
+img {
+  border-radius: 2px;
 }
-a {
-  cursor: pointer;
-  cursor: hand;
+
+@media (max-width: 1600px) {
+  img{
+    width: 250px;
+  }
 }
+
+h1 {
+  color: hsla(195,100%,25%,1);
+  font-family: "Pacifico", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+.block > section {
+  background: #fff;
+  padding: 2em 1em;
+  margin: 0.5em;
+  border-radius: 4px;
+  border-top: 5px solid #00BFFF;
+}
+
 button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
+  background: #00BFFF;
+  border: 0;  
   border-radius: 4px;
   cursor: pointer;
-  cursor: hand;
+  color: #FFF;  
+  font-weight: bold; 
+  font-size: 13px;  
+  padding: 2em 4em;
+  text-transform: uppercase;
 }
+
 button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
+  background-color: #1E90FF;
+  background-size: 3em;
+  background-position: 1.5em 50%;
 }
 
-/* Navigation link styles */
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-nav a.active {
-  color: #039be5;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
+li {
+  border: 1px outset #ddd;
+  padding: 0.5em;
 }
