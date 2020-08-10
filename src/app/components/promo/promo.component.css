@@ -1,0 +1,17 @@
+.promo_title {
+  color: hsla(195, 100%, 25%, 1);
+  font-family: "Pacifico", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  text-align: center;
+}
+
+.block.promo img{
+    width: 100px;
+}
+
+
+.block > section {
+    background-color: #ffe6ba;
+    border-top: 5px solid #ff0000;
+}
