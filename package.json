@@ -1,8 +1,8 @@
 {
-  "name": "angular-io-example",
+  "name": "ssr-workshop-angular",
   "version": "1.0.0",
   "private": true,
-  "description": "Example project from an angular.io guide.",
+  "description": "Tikal SSR Angular workshop",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -14,12 +14,11 @@
     "build:ssr": "ng build --prod && ng run ssr-demo:server:production",
     "serve:ssr": "node dist/server/main.js",
     "prerender": "ng run ssr-demo:prerender",
-    
     "demo-csr": "http-server -c-1 ./dist/browser",
     "demo-ssr": "npm run build:ssr && npm run serve:ssr"
   },
   "keywords": [],
-  "author": "",
+  "author": "AlexS@tikalk.com",
   "license": "MIT",
   "dependencies": {
     "@angular/animations": "~9.1.4",
