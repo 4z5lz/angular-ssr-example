@@ -1,4 +1,5 @@
 <section class="block">
+  <div class="loader" *ngIf="shows.length === 0"></div>
   <section *ngFor="let item of shows">
     <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
     <h2>{{ item.show.name }}</h2>
