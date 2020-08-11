@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnvironmentService } from '../services/env.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor() {}
+  isBrowser: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private envSerivce: EnvironmentService) {}
+
+  ngOnInit(): void {
+    this.isBrowser = this.envSerivce.isBrowser()
+  }
 }
