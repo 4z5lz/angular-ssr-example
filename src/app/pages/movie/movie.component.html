@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<section class="block">
+  <div class="loader" *ngIf="!showDetails"></div>
+  <section *ngIf="showDetails">
+    
+    <img [src]="showDetails.image.original" alt="{{ showDetails.name }}" />
+    <h2>{{ showDetails.name }}</h2>
+    <div>{{ showDetails.summary | stripHtml }}</div>
+    <aside>
+      <ul>
+        <li>Price: ${{ showDetails.weight }}</li>
+        <li>
+          Rating: <strong>{{ showDetails.rating.average }}</strong>
+        </li>
+      </ul>
+    </aside>
+  </section>
+</section>

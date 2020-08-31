@@ -2,8 +2,10 @@
   <div class="loader" *ngIf="shows.length === 0"></div>
   <section *ngFor="let item of shows">
     <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
-    <h2>{{ item.show.name }}</h2>
-    <div>{{ item.show.summary | stripHtml | truncate: [100, "..."] }}</div>
+    <h2>
+      <a [routerLink]="['movie', item.show.id]">{{ item.show.name }}</a>
+    </h2>
+    <div>{{ item.show.summary | stripHtml | truncate: [70, "..."] }}</div>
     <aside>
       <ul>
         <li>Price: ${{ item.show.weight }}</li>
@@ -11,7 +13,7 @@
           Rating: <strong>{{ item.show.rating.average }}</strong>
         </li>
       </ul>
-      <button>More details</button>
+      <a [routerLink]="['movie', item.show.id]">More details</a>
     </aside>
   </section>
 </section>

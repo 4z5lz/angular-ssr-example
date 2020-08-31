@@ -39,15 +39,15 @@ img {
   }
 }
 
+a, a:link {
+  color: hsla(195,100%,25%,1);
+}
+
 h1 {
   color: hsla(195,100%,25%,1);
   font-family: "Pacifico", sans-serif;
   font-weight: 300;
   font-size: 50px;
-}
-
-h2 {
-  font-size: 25px;
 }
 
 .block > section {
@@ -56,24 +56,6 @@ h2 {
   margin: 0.5em;
   border-radius: 4px;
   border-top: 5px solid #00BFFF;
-}
-
-button {
-  background: #00BFFF;
-  border: 0;  
-  border-radius: 4px;
-  cursor: pointer;
-  color: #FFF;  
-  font-weight: bold; 
-  font-size: 13px;  
-  padding: 2em 4em;
-  text-transform: uppercase;
-}
-
-button:hover {
-  background-color: #1E90FF;
-  background-size: 3em;
-  background-position: 1.5em 50%;
 }
 
 ul {
@@ -98,4 +80,17 @@ li {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.user--card{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px; 
 }

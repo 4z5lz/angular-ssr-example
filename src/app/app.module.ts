@@ -7,30 +7,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 
-import { AppComponent } from './components/app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SafePipe } from './pipes/safe.pipe';
-import { StripHtmlPipe } from './pipes/strip-html.pipe';
-import { TruncatePipe } from './pipes/truncate.pipe';
-import { ShowsComponent } from './components/shows/shows.component';
-import { PromoComponent } from './components/promo/promo.component';
+import { AppComponent } from './app.component';
+import { HomeModule } from './pages/home/home.module';
+import { MovieModule } from './pages/movie/movie.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'ssr-demo-data' }),
     BrowserTransferStateModule,
+    HomeModule,
+    MovieModule,
   ],
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SafePipe,
-    StripHtmlPipe,
-    TruncatePipe,
-    ShowsComponent,
-    PromoComponent,
-  ],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {
