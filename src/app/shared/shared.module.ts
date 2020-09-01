@@ -28,6 +28,11 @@ import { RouterModule } from '@angular/router';
     ShowsComponent,
     PromoComponent,
   ],
+  providers: [
+    SafePipe,
+    StripHtmlPipe,
+    TruncatePipe
+  ],
   imports: [CommonModule, RouterModule],
 })
 export class SharedModule {}

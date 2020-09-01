@@ -3,7 +3,6 @@
 <section class="block">
   <div class="loader" *ngIf="!showDetails"></div>
   <section *ngIf="showDetails">
-    
     <img [src]="showDetails.image.original" alt="{{ showDetails.name }}" />
     <h2>{{ showDetails.name }}</h2>
     <div>{{ showDetails.summary | stripHtml }}</div>
@@ -13,7 +12,11 @@
         <li>
           Rating: <strong>{{ showDetails.rating.average }}</strong>
         </li>
+        <li>
+          Premiered: <strong>{{ showDetails.premiered }}</strong>
+        </li>
       </ul>
+      <button>Buy!</button>
     </aside>
   </section>
 </section>
