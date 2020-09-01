@@ -30,7 +30,7 @@ export class ShowsComponent implements OnInit {
         this.shows = data;
 
         // Place users data to TransferState
-       this.state.set(STATE_KEY_SHOWS, <any>data);
+        this.state.set(STATE_KEY_SHOWS, <any>data);
       });
     }
   }
