@@ -1,9 +1,15 @@
 <section class="block">
   <div class="loader" *ngIf="shows.length === 0"></div>
   <section *ngFor="let item of shows">
-    <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
+    <img
+      loading="lazy"
+      [src]="item.show.image.medium | httpsLink"
+      alt="{{ item.show.name }}"
+    />
     <h2>
-      <a [routerLink]="['movie', item.show.id]">{{ item.show.name }}</a>
+      <a [routerLink]="['movie', item.show.id, friendlyName(item.show.name)]">{{
+        item.show.name
+      }}</a>
     </h2>
     <div>{{ item.show.summary | stripHtml | truncate: [70, "..."] }}</div>
     <aside>
@@ -13,7 +19,9 @@
           Rating: <strong>{{ item.show.rating.average }}</strong>
         </li>
       </ul>
-      <a [routerLink]="['movie', item.show.id]">More details</a>
+      <a [routerLink]="['movie', item.show.id, friendlyName(item.show.name)]"
+        >More details</a
+      >
     </aside>
   </section>
 </section>

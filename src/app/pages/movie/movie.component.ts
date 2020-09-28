@@ -21,6 +21,7 @@ const STATE_KEY_SHOWS = makeStateKey('movie-data');
 })
 export class MovieComponent implements OnInit {
   showId: number;
+  showName: string;
 
   showDetails: ShowDetails = null;
 
@@ -36,6 +37,7 @@ export class MovieComponent implements OnInit {
   ) {
     // Get movie ID param from the route
     this.showId = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.showName = this.route.snapshot.paramMap.get('name');
   }
 
   ngOnInit(): void {
@@ -69,7 +71,7 @@ export class MovieComponent implements OnInit {
         );
 
         // Add <link rel='canonical' href> tag
-        this.htmlModify.setLinkTag(LinkRelAttr.canonical, '/movie/' + data.id);
+        this.htmlModify.setLinkTag(LinkRelAttr.canonical, '/movie/' + this.showId + '/' + this.showName);
       });
     }
   }

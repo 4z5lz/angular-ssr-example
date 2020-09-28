@@ -1,16 +1,31 @@
 <app-header></app-header>
 
-<section class="block">
+<section class="block" itemscope itemtype="https://schema.org/Product">
   <div class="loader" *ngIf="!showDetails"></div>
   <section *ngIf="showDetails">
-    <img [src]="showDetails.image.original" alt="{{ showDetails.name }}" />
-    <h2>{{ showDetails.name }}</h2>
-    <div>{{ showDetails.summary | stripHtml }}</div>
+    <h1 itemprop="name">{{ showDetails.name }}</h1>
+    <img
+      loading="lazy"
+      itemprop="image"
+      [src]="showDetails.image.original | httpsLink"
+      alt="{{ showDetails.name }}"
+    />
+    <div itemprop="description">{{ showDetails.summary | stripHtml }}</div>
     <aside>
       <ul>
-        <li>Price: ${{ showDetails.weight }}</li>
-        <li>
-          Rating: <strong>{{ showDetails.rating.average }}</strong>
+        <li itemscope itemtype="https://schema.org/Offer">
+          Price: <span itemprop="priceCurrency" content="USD">$</span>
+          <span itemprop="price" content="15">15</span>
+        </li>
+        <li
+          temprop="aggregateRating"
+          itemscope
+          itemtype="https://schema.org/AggregateRating"
+        >
+          Rating:
+          <strong itemprop="ratingValue">{{
+            showDetails.rating.average
+          }}</strong>
         </li>
         <li>
           Premiered: <strong>{{ showDetails.premiered }}</strong>

@@ -1,11 +1,15 @@
-<h2 class="promo_title">{{title}}</h2>
+<h2 class="promo_title">{{ title }}</h2>
 
 <section class="block promo">
   <div class="loader" *ngIf="promo.length === 0"></div>
   <section *ngFor="let item of promo">
-    <img [src]="item.show.image.medium" alt="{{ item.show.name }}" />
+    <img
+      loading="lazy"
+      [src]="item.show.image.medium | httpsLink"
+      alt="{{ item.show.name }}"
+    />
     <p>
-        <strong>{{ item.show.name }}</strong>
-    </p>    
+      <strong>{{ item.show.name }}</strong>
+    </p>
   </section>
 </section>

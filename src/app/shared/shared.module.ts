@@ -9,6 +9,7 @@ import { SafePipe } from './pipes/safe.pipe';
 import { StripHtmlPipe } from './pipes/strip-html.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { RouterModule } from '@angular/router';
+import { HttpsLinkPipe } from './pipes/https-link.pipe';
 
 
 @NgModule({
@@ -19,19 +20,22 @@ import { RouterModule } from '@angular/router';
     TruncatePipe,
     ShowsComponent,
     PromoComponent,
+    HttpsLinkPipe,
   ],
   exports: [
     HeaderComponent,
     SafePipe,
     StripHtmlPipe,
     TruncatePipe,
+    HttpsLinkPipe,
     ShowsComponent,
     PromoComponent,
   ],
   providers: [
     SafePipe,
     StripHtmlPipe,
-    TruncatePipe
+    TruncatePipe,
+    HttpsLinkPipe
   ],
   imports: [CommonModule, RouterModule],
 })

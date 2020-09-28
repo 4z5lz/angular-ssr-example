@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'movie/:id',
+    path: 'movie/:id/:name',
     loadChildren: () =>
       import('./pages/movie/movie.module').then((m) => m.MovieModule),
   },
@@ -13,9 +13,13 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '**',
+    path: '404',
     loadChildren: () =>
       import('./pages/notfound/notfound.module').then((m) => m.NotfoundModule),
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

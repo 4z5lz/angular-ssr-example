@@ -8,8 +8,8 @@ import { Show, ShowDetails } from '../models/show';
 
 @Injectable({ providedIn: 'root' })
 export class MoviesService {
-  private showsSearchEndpointUrl = 'http://api.tvmaze.com/search/shows?q='; // URL to TV-Maze search web api
-  private showEndpointUrl = 'http://api.tvmaze.com/shows/'; // URL to TV-Maze search web api
+  private showsSearchEndpointUrl = 'https://api.tvmaze.com/search/shows?q='; // URL to TV-Maze search web api
+  private showEndpointUrl = 'https://api.tvmaze.com/shows/'; // URL to TV-Maze search web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

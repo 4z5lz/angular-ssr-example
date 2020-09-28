@@ -8,8 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { HomeModule } from './pages/home/home.module';
-import { MovieModule } from './pages/movie/movie.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -18,9 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'ssr-demo-data' }),
-    BrowserTransferStateModule,
-    HomeModule,
-    MovieModule,
+    BrowserTransferStateModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

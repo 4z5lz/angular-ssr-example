@@ -34,4 +34,8 @@ export class ShowsComponent implements OnInit {
       });
     }
   }
+
+  friendlyName(name: string): string {
+    return name.split(' ').join('-')
+  }
 }
