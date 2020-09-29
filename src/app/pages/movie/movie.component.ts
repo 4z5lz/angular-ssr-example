@@ -11,6 +11,7 @@ import {
 
 import { StripHtmlPipe } from '../../shared/pipes/strip-html.pipe';
 import { TruncatePipe } from '../../shared/pipes/truncate.pipe';
+import { EnvironmentService } from 'src/app/services/env.service';
 
 const STATE_KEY_SHOWS = makeStateKey('movie-data');
 
@@ -29,6 +30,7 @@ export class MovieComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: object,
     @Inject(APP_ID) private appId: string,
     private state: TransferState,
+    private envSerivce: EnvironmentService,
     private moviesService: MoviesService,
     private htmlModify: HtmlModifyService,
     private route: ActivatedRoute,
@@ -71,7 +73,7 @@ export class MovieComponent implements OnInit {
         );
 
         // Add <link rel='canonical' href> tag
-        this.htmlModify.setLinkTag(LinkRelAttr.canonical, '/movie/' + this.showId + '/' + this.showName);
+        this.htmlModify.setLinkTag(LinkRelAttr.canonical, this.envSerivce.getBaseHref() + 'movie/' + this.showId + '/' + this.showName);
       });
     }
   }

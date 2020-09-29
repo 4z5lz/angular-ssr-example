@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Renderer2, RendererFactory2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { EnvironmentService } from './env.service';
 
 export type LinkRelAttrOptions = 'preload' | 'prefetch' | 'icon' | 'stylesheet' | 'canonical';
 export type LinkAsAttrOptions = 'script' | 'style' | 'font' | 'image';
@@ -30,6 +31,7 @@ export class HtmlModifyService {
   constructor(
     private meta: Meta,
     private title: Title,
+    private env: EnvironmentService,
     private rendererFactory: RendererFactory2,
     @Inject(DOCUMENT) private document
   ) {
@@ -66,5 +68,21 @@ export class HtmlModifyService {
     }
 
     this.renderer2.appendChild(this.document.head, s);
+  }
+
+  /**
+   * This method will patch base tage (<base href="/dev/">) just for demo deploy to AWS Labmda
+   * 
+   * @param renderer2 
+   * @param isCompare 
+   * @param baseHref 
+   */
+  public patchBaseHref() {
+    this.renderer2.removeChild(this.document.head, this.renderer2.selectRootElement('base'));
+
+    let s = this.renderer2.createElement('base');
+    s.setAttribute('href', this.env.getBaseHref());
+
+    this.renderer2.insertBefore(this.document.head, s, this.document.head.firstChild);
   }
 }

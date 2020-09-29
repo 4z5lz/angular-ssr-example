@@ -23,4 +23,12 @@ export class EnvironmentService {
   public isServer(): boolean {
     return isPlatformServer(this.platformId);
   }
+
+  public isLambda(): boolean {
+    return this.isServer() && process && process.env && !!process.env.LAMBDA_TASK_ROOT;
+  }
+
+  public getBaseHref(): string {
+    return this.isLambda() ? '/production/' : '/' 
+  }
 }

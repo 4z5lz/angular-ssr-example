@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvironmentService } from 'src/app/services/env.service';
+import { environment } from '../../../environments/environment';
+
 import {
   HtmlModifyService,
   LinkRelAttr,
@@ -27,7 +29,7 @@ export class HomeComponent implements OnInit {
     );
 
     // Add <link rel='canonical' href> tag
-    this.htmlModify.setLinkTag(LinkRelAttr.canonical, '/');
+    this.htmlModify.setLinkTag(LinkRelAttr.canonical, this.envSerivce.getBaseHref());
   }
 
   ngOnInit(): void {
