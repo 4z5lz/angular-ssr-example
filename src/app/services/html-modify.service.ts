@@ -71,7 +71,7 @@ export class HtmlModifyService {
   }
 
   /**
-   * This method will patch base tage (<base href="/dev/">) just for demo deploy to AWS Labmda
+   * This method will patch base tag (<base href="/production/">) just for demo deploy to AWS Labmda
    * 
    * @param renderer2 
    * @param isCompare 

@@ -24,6 +24,8 @@ custom:
   apigwBinary:
     types:
       - "*/*"
+  contentEncoding:
+    contentCompression: 1000
 functions:
   api:
     handler: lambda.handler
