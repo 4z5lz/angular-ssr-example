@@ -25,3 +25,5 @@ npm run deploy:sls
 
 Finaly, you should see your app published, like:
 https://wzu32gvx3b.execute-api.us-east-1.amazonaws.com/production/
+or
+https://d1zys4h7ryi3cv.cloudfront.net/production/ 
