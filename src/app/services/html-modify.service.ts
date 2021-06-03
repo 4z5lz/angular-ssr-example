@@ -1,7 +1,6 @@
-import { Injectable, Inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { Renderer2, RendererFactory2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { EnvironmentService } from './env.service';
 
 export type LinkRelAttrOptions = 'preload' | 'prefetch' | 'icon' | 'stylesheet' | 'canonical';

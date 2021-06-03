@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvironmentService } from 'src/app/services/env.service';
-import { environment } from '../../../environments/environment';
-
 import {
   HtmlModifyService,
-  LinkRelAttr,
+  LinkRelAttr
 } from 'src/app/services/html-modify.service';
 
 @Component({
@@ -19,16 +17,16 @@ export class HomeComponent implements OnInit {
     private envSerivce: EnvironmentService,
     private htmlModify: HtmlModifyService
   ) {
-    // Add Title tag
+    // For UX, SEO & Social Media: Add Title tag
     this.htmlModify.addPageTitle('Science Fiction Movies Shop');
 
-    // Add meta description tag
+    // For SEO & Social Media: Add meta description tag
     this.htmlModify.addMetaTag(
       'description',
       'Welcome to Science Fiction Movies Shop'
     );
 
-    // Add <link rel='canonical' href> tag
+    // For SEO: Add <link rel='canonical' href> tag
     this.htmlModify.setLinkTag(LinkRelAttr.canonical, this.envSerivce.getBaseHref());
   }
 

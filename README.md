@@ -1,6 +1,6 @@
 # Server-Side Rendering Example based on Angular Universal  
 
-## Master branch is a final solution.
+## Master branch is a final solution that contains fully worked development and production SSR examples, includes tips for SEO improvements  
 Follow branches from the first to the latest, to learn how to upgrade CSR (client-side rendering) application to SSR (server-side rendering). 
 
 ### Prerequisites
@@ -9,14 +9,16 @@ Follow branches from the first to the latest, to learn how to upgrade CSR (clien
 npm install
 ```
 
-- Run dev SSR app
+- Run development SSR app
 ```bash
 npm run dev:ssr
 ```
 
-- If you want to run SSR app in production mode, run
+or 
+
+- Run production ready SSR app
 ```bash
-npm run build:ssr
+npm run build:ssr && npm run serve:ssr
 ```
 
 ### For deployment, you can publish SSR app to Amazon Lambda
