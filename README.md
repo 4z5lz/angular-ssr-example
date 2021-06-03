@@ -1,40 +1,46 @@
-# Server-Side Rendering Example based on Angular Universal  
-
-## Master branch is a final solution that contains fully worked out development and production SSR examples, includes tips for SEO improvements  
-Follow branches from the first to the latest, to learn how to upgrade CSR (client-side rendering) application to SSR (server-side rendering). 
+# Server-Side Rendering Example based on Angular Universal, includes tips for SEO improvements  
+## Why Use Server-Side Rendering?
+- Improve Search Engine Optimization (SEO) and ready for Social Media sharing
+- Show the first page quickly
+- Improve performance for low-powered devices
 
 ### Prerequisites
-- Install all dependencies
+Install all dependencies
 ```bash
 npm install
 ```
 
-### Run application in classic CSR (client-side rendering, aka SPA) mode:
-
-- Run development CSR app
+### Run application in classic SPA mode (client-side rendering, aka CSR):
+Development of SPA apps with Dev Server
 ```bash
 npm start
 ```
 
 or 
 
-- Run production ready CSR app
+Run production ready CSR app
 ```bash
 npm run demo-csr
 ```
 
 ### Run application in SSR mode:
 
-- Run development SSR app
+Development of SSR apps with Dev Server
 ```bash
 npm run dev:ssr
 ```
 
 or 
 
-- Run production ready SSR app
+Run production ready SSR app
 ```bash
 npm run build:ssr && npm run serve:ssr
+```
+
+### Angular Universal allows prerender web pages
+It allows to cache pages as static files, which can then be served to the client via CDN or a simple server
+```bash
+npm run prerender
 ```
 
 ### For deployment, you can publish SSR app to Amazon Lambda

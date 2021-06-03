@@ -19,7 +19,7 @@
     "deploy:sls": "serverless deploy"
   },
   "keywords": [],
-  "author": "AlexS@tikalk.com",
+  "author": "Alex Savenok<AlexS@tikalk.com>",
   "license": "MIT",
   "dependencies": {
     "@angular/animations": "~10.0.8",
