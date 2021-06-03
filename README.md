@@ -1,4 +1,4 @@
-# Angular Server Side Rendering Workshop
+# Angular Server Side Rendering Example
 
 ## Branch: 7-ssr-deploy
 
