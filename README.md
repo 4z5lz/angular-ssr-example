@@ -3,10 +3,8 @@
 ## Master branch is a final solution.
 Follow branches from the first to the latest, to learn how to upgrade CSR (client-side rendering) application to SSR (server-side rendering). 
 
-**Added serverless framework and added support for deployemnt to AWS lambda**
-
 ### Prerequisites
-- Install all dependencies npm install
+- Install all dependencies
 ```bash
 npm install
 ```
@@ -21,7 +19,7 @@ npm run dev:ssr
 npm run build:ssr
 ```
 
-### For depolyment, you can publsih SSR app to Amazon Lambda
+### For deployment, you can publish SSR app to Amazon Lambda
 - You need active AWS account (Free tier is enough)
 - Install AWS CLI
 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
