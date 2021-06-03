@@ -9,6 +9,22 @@ Follow branches from the first to the latest, to learn how to upgrade CSR (clien
 npm install
 ```
 
+### Run application in classic CSR (client-side rendering, aka SPA) mode:
+
+- Run development CSR app
+```bash
+npm start
+```
+
+or 
+
+- Run production ready CSR app
+```bash
+npm run demo-csr
+```
+
+### Run application in SSR mode:
+
 - Run development SSR app
 ```bash
 npm run dev:ssr
