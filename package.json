@@ -15,7 +15,6 @@
     "build:ssr": "ng build --prod && ng run ssr-demo:server:production",
     "serve:ssr": "node dist/server/main.js",
     "prerender": "ng run ssr-demo:prerender",
-    "serve:sls": "serverless offline start",
     "build:sls": "ng build --prod && ng run ssr-demo:serverless:production",
     "deploy:sls": "serverless deploy"
   },
