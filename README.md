@@ -1,6 +1,6 @@
 # Server-Side Rendering Example based on Angular Universal  
 
-## Master branch is a final solution that contains fully worked development and production SSR examples, includes tips for SEO improvements  
+## Master branch is a final solution that contains fully worked out development and production SSR examples, includes tips for SEO improvements  
 Follow branches from the first to the latest, to learn how to upgrade CSR (client-side rendering) application to SSR (server-side rendering). 
 
 ### Prerequisites
