@@ -4,11 +4,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Show } from '../models/show';
+import { Show, ShowDetails } from '../models/show';
 
 @Injectable({ providedIn: 'root' })
 export class MoviesService {
-  private showsSearchEndpointUrl = 'http://api.tvmaze.com/search/shows?q='; // URL to TV-Maze search web api
+  private showsSearchEndpointUrl = 'https://api.tvmaze.com/search/shows?q='; // URL to TV-Maze search web api
+  private showEndpointUrl = 'https://api.tvmaze.com/shows/'; // URL to TV-Maze search web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -20,6 +21,12 @@ export class MoviesService {
     return this.http
       .get<Show[]>(this.showsSearchEndpointUrl + query)
       .pipe(catchError(this.handleError<Show[]>('getShows, query:' + query, [])));
+  }
+
+  getShowDetailsById(id: number): Observable<ShowDetails> {
+    return this.http
+      .get<ShowDetails>(this.showEndpointUrl + id)
+      .pipe(catchError(this.handleError<ShowDetails>('getShowDetailsById, id:' + id)));
   }
 
   /**

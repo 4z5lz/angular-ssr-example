@@ -10,7 +10,14 @@
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e",
-    "demo-csr": "ng build --prod && http-server -c-1 ./dist/browser"
+    "demo-csr": "ng build --prod && http-server -c-1 ./dist/browser",
+    "dev:ssr": "ng run ssr-demo:serve-ssr",
+    "build:ssr": "ng build --prod && ng run ssr-demo:server:production",
+    "serve:ssr": "node dist/server/main.js",
+    "prerender": "ng run ssr-demo:prerender",
+    "serve:sls": "serverless offline start",
+    "build:sls": "ng build --prod && ng run ssr-demo:serverless:production",
+    "deploy:sls": "serverless deploy"
   },
   "keywords": [],
   "author": "AlexS@tikalk.com",
@@ -26,7 +33,9 @@
     "@angular/platform-server": "~10.0.8",
     "@angular/router": "~10.0.8",
     "@angular/upgrade": "~10.0.8",
+    "@nguniversal/express-engine": "^10.0.1",
     "angular-in-memory-web-api": "~0.11.0",
+    "aws-serverless-express": "^3.3.8",
     "express": "^4.15.2",
     "rxjs": "~6.6.2",
     "zone.js": "~0.10.3"
@@ -35,6 +44,7 @@
     "@angular-devkit/build-angular": "~0.1000.5",
     "@angular/cli": "~10.0.5",
     "@angular/compiler-cli": "~10.0.8",
+    "@nguniversal/builders": "^10.0.1",
     "@types/express": "^4.17.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -49,6 +59,9 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "lodash": "^4.16.2",
     "protractor": "~7.0.0",
+    "serverless": "^2.3.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-offline": "^6.8.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.7"
