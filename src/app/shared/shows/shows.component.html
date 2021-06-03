@@ -3,7 +3,7 @@
   <section *ngFor="let item of shows">
     <img
       loading="lazy"
-      [src]="item.show.image.medium | httpsLink"
+      [src]="item.show.image?.medium | httpsLink"
       alt="{{ item.show.name }}"
     />
     <h2>

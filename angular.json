@@ -189,5 +189,8 @@
       }
     }
   },
-  "defaultProject": "ssr-demo"
+  "defaultProject": "ssr-demo",
+  "cli": {
+    "analytics": false
+  }
 }
