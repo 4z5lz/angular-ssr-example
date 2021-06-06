@@ -5,6 +5,8 @@
       loading="lazy"
       [src]="item.show.image?.medium | httpsLink"
       alt="{{ item.show.name }}"
+      width="250"
+      height="351"
     />
     <h2>
       <a [routerLink]="['movie', item.show.id, friendlyName(item.show.name)]">{{
